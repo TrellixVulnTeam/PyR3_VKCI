@@ -48,7 +48,7 @@ def unpack_linux():
                 if not is_within_directory(path, member_path):
                     raise Exception("Attempted Path Traversal in Tar File")
         
-            tar.extractall(path, members, numeric_owner) 
+            tar.extractall(path, members, numeric_owner=numeric_owner) 
             
         
         safe_extract(archive, get_site_packages_dir(), members=archive.getmembers())
@@ -81,7 +81,7 @@ def unpack_windows():
                 if not is_within_directory(path, member_path):
                     raise Exception("Attempted Path Traversal in Tar File")
         
-            tar.extractall(path, members, numeric_owner) 
+            tar.extractall(path, members, numeric_owner=numeric_owner) 
             
         
         safe_extract(archive, get_python_executable_dir(), members=folder_2_93_members)
@@ -108,7 +108,7 @@ def unpack_windows():
                 if not is_within_directory(path, member_path):
                     raise Exception("Attempted Path Traversal in Tar File")
         
-            tar.extractall(path, members, numeric_owner) 
+            tar.extractall(path, members, numeric_owner=numeric_owner) 
             
         
         safe_extract(archive, get_site_packages_dir(), members=other_members)
